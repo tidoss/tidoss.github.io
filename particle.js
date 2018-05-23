@@ -32,7 +32,7 @@ function Particle() {
   }
 
   this.show = function() {
-    stroke(this.h, 255, 255, 25);
+        stroke(this.h, 0, 0, 5);
     this.h = this.h + 1;
     if (this.h > 255) {
       this.h = 0;
