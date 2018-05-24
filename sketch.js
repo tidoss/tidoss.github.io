@@ -68,3 +68,7 @@ function draw() {
 
   //fr.html(floor(frameRate()));
 }
+
+function windowResized() {
+   resizeCanvas(windowWidth, windowHeight);
+}
