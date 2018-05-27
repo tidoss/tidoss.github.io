@@ -19,8 +19,12 @@ var particles = [];
 
 var flowfield;
 
+var stan;
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  stan = createCanvas(windowWidth, windowHeight);
+  stan.position(0,0);
+  stan.style('z-index', '-1');
     colorMode( 225,225,225);
   cols = floor(width / scl);
   rows = floor(height / scl);
