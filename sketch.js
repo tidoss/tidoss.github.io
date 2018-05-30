@@ -1,7 +1,28 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/BjoM9oKOAKY
+function detectmob() {
+ if( navigator.userAgent.match(/Android/i)
+ || navigator.userAgent.match(/webOS/i)
+ || navigator.userAgent.match(/iPhone/i)
+ || navigator.userAgent.match(/iPad/i)
+ || navigator.userAgent.match(/iPod/i)
+ || navigator.userAgent.match(/BlackBerry/i)
+ || navigator.userAgent.match(/Windows Phone/i)
+ ){
+    return true;
+  }
+ else {
+    return false;
+  }
+}
+
+var isMobi = detectmob();
+
+var numParticles;
+
+if (isMobi) {
+  numParticles = 400
+} else {
+  numParticles = 1000
+}
 
 var inc = 0.1;
 var scl = 10;
@@ -11,15 +32,13 @@ var zoff = 0;
 
 var fr;
 
-//!?!?
-var W = 2000;
-var H = 2000;
-
 var particles = [];
 
 var flowfield;
 
 var stan;
+
+
 
 function setup() {
   stan = createCanvas(windowWidth, windowHeight);
@@ -32,7 +51,7 @@ function setup() {
 
   flowfield = new Array(cols * rows);
 
-  for (var i = 0; i < 1000; i++) {
+  for (var i = 0; i < numParticles; i++) {
     particles[i] = new Particle();
   }
   //background(169,169,169);
